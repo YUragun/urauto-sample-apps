@@ -1,3 +1,5 @@
+# streamlit run C:\Users\yavuz\urauto\frontend\apps\welcome\welcome.py
+# streamlit run c:/Users/yavuzuragun/Desktop/URAUTO_APPS/app2/app.py --server.port 8502
 import sys
 import streamlit as st
 import time
@@ -162,7 +164,7 @@ def main():
         with col1:
             st.markdown("""
             **Required:**
-            - urauto.ai account with sufficient balance ($5+ recommended)
+            - urauto.ai account with sufficient balance ($50+ recommended)
             - Clear idea of what you want to build
             
             **Helpful to have:**
@@ -919,8 +921,9 @@ def main():
                 **How to get Twilio credentials:**
                 1. Sign up at twilio.com
                 2. Verify your phone number
-                3. Copy SID and token from dashboard
-                4. Purchase or use trial phone number
+                3. Get $15 free trial credit
+                4. Copy SID and token from dashboard
+                5. Purchase or use trial phone number
                 """)
         
         # SaaS Tools examples
@@ -940,8 +943,6 @@ def main():
                 3. Navigate to API section
                 4. Create new API key
                 5. Copy and paste into configuration
-                
-                **💰 Cost:** Pay-per-use, starts at $0.002 per 1K tokens
                 """)
             
             # Slack configuration
@@ -1572,10 +1573,7 @@ def main():
             
             Your app will start running and be accessible at its URL.
             """)
-            
-            with st.expander("Run Cost Calculator"):
-                hours = st.slider("Hours to run", 1, 24, 1)
-                st.write(f"Cost: ${hours * 3} ($3/hour)")
+        
             
         with col2:
             st.markdown("### Editing an App")
@@ -1889,24 +1887,11 @@ def scrape_product_prices(url):
         
         - Credits are used to create, run, and edit apps
         - Costs of creating and editing apps is based on complexity and revisions
-        - Running apps costs $3 per hour
+        - Running apps varies based on selected cloud resources and runtime
         - Your balance is visible in the navigation bar
         """)
         
-        # Token usage by feature
-        with st.expander("Usage Examples"):
-            token_usage = {
-                "Action": ["Creating a basic app", "Running an app (per hour)", "Making a revision"],
-                "Approximate Cost": ["$5", "$3", "$0.1 - $8"],
-                "Notes": [
-                    "Fixed: Ongoing cost while editing",
-                    "Fixed: Ongoing cost while running",
-                    "Variable: Depends on complexity of changes"
-                ]
-            }
-            
-            st.dataframe(token_usage, use_container_width=True)
-        
+                
         st.divider()
         
         # Recharging tokens
